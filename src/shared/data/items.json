@@ -3,24 +3,24 @@
         "id": 1,
         "name": "Atomic Habits",
         "price": 7.99,
-        "imgURL": "../../assets/books/livro1.jpg"
+        "imgURL": "./livro1.jpg"
     },
     {
         "id": 2,
         "name": "Elon Musk",
         "price": 9.99,
-        "imgURL": "../../assets/books/livro2.jpg"
+        "imgURL": "./livro2.jpg"
     },
     {
         "id": 3,
         "name": "Essentialism",
         "price": 10.99,
-        "imgURL": "../../assets/books/livro3.jpg"
+        "imgURL": "./livro3.jpg"
     },
     {
         "id": 4,
         "name": "The weapons of persuasion",
         "price": 6.99,
-        "imgURL": "../../assets/books/livro4.jpg"
+        "imgURL": "./livro4.jpg"
     }
 ]
