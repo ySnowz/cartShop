@@ -1,12 +1,7 @@
 import { useShoppingCart } from "../context/ShoppingCartContext"
 import storeItems from "../data/items.json"
 
-type PostCart = {
-    id: number
-    quantity: number
-}
-
-export const CartItem = ({ id, quantity }: PostCart) => {
+export const CartItem = ({ id, quantity }) => {
     const { removeFromCart } = useShoppingCart()
 
     const item = storeItems.find(i => i.id === id)

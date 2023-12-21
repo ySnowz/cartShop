@@ -2,47 +2,28 @@ import { createContext, ReactNode, useContext, useState } from "react"
 import { Cart } from "../components/Cart"
 import { useLocalStorage } from "../hooks/useLocalStorage"
 
-type ShoppingProviderProps = {
-    children: ReactNode
-}
 
-type ShoppingCartContext = {
-    openCart: () => void
-    closeCart: () => void
-    getItemQuantity: (id: number) => number
-    increaseCount: (id: number) => void
-    decreaseCount: (id: number) => void
-    removeFromCart: (id: number) => void
-    cartQuantity: number
-    cartItems: CartItem[]
-}
-
-type CartItem = {
-    id: number,
-    quantity: number
-}
-
-const ShoppingCartContext = createContext({} as ShoppingCartContext)
+const ShoppingCartContext = createContext({})
 
 export const useShoppingCart = () => {
     return useContext(ShoppingCartContext)
 }
 
-export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
+export const ShoppingProvider = ({ children }) => {
 
     const [isOpen, setIsOpen] = useState<Boolean>(false)
-    const [cartItems, setCartItems] = useLocalStorage<CartItem[]>("shopping-cart", [])
+    const [cartItems, setCartItems] = useLocalStorage("shopping-cart", [])
 
-    const cartQuantity = cartItems.reduce((quantity: number, item) => item.quantity + quantity, 0)
+    const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)
 
     const openCart = () => setIsOpen(true)
     const closeCart = () => setIsOpen(false)
 
-    const getItemQuantity = (id: number) => {
+    const getItemQuantity = (id) => {
         return cartItems.find((item) => item.id === id)?.quantity || 0
     }
 
-    const increaseCount = (id: number) => {
+    const increaseCount = (id) => {
         setCartItems(currItems => {
             if (currItems.find(item => item.id === id) == null) {
                 return [...currItems, { id, quantity: 1 }]
@@ -58,7 +39,7 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
         })
     }
 
-    const decreaseCount = (id: number) => {
+    const decreaseCount = (id) => {
         setCartItems(currItems => {
             if (currItems.find(item => item.id === id)?.quantity == 1) {
                 return currItems.filter(item => item.id !== id)
@@ -74,7 +55,7 @@ export const ShoppingProvider = ({ children }: ShoppingProviderProps) => {
         })
     }
 
-    const removeFromCart = (id: number) => {
+    const removeFromCart = (id) => {
         setCartItems(currItems => {
             return currItems.filter(item => item.id !== id)
         })

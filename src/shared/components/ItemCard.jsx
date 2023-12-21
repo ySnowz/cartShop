@@ -1,14 +1,7 @@
-import { formatCurrency } from "../../shared/utilities/formatCurrency"
+import { formatCurrency } from "../utilities/formatCurrency"
 import { useShoppingCart } from "../context/ShoppingCartContext"
 
-type PostCard = {
-    id: number,
-    name: string,
-    price: number,
-    imgURL: string
-}
-
-export const ItemCard = ({ id, name, price, imgURL }: PostCard) => {
+export const ItemCard = ({ id, name, price, imgURL }) => {
     const {getItemQuantity, increaseCount, decreaseCount, removeFromCart} = useShoppingCart()
     
     const quantity = getItemQuantity(id)

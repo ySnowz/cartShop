@@ -3,11 +3,7 @@ import { CartItem } from "./CartItem";
 import storeItems from "../data/items.json"
 import { formatCurrency } from "../utilities/formatCurrency";
 
-type CartProps = {
-    isOpen: boolean;
-};
-
-export const Cart = ({ isOpen }: CartProps) => {
+export const Cart = ({ isOpen }) => {
     const cartClasses = isOpen === true
         ? 'fixed inset-y-0 right-0 w-1/2 bg-white shadow-lg transform translate-x-0 ease-out transition-transform duration-300'
         : 'fixed inset-y-0 right-0 w-1/2 bg-white shadow-lg transform translate-x-full ease-in transition-transform duration-300';
