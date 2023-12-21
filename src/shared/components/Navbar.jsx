@@ -9,9 +9,7 @@ export const Navbar = () => {
             <header className="w-full h-min flex justify-between items-center px-2 py-4 bg-gray-50 drop-shadow-sm">
                 <nav className="w-full flex flex-row justify-start items-start">
                     <ul className="flex flex-row justify-start items-start gap-2">
-                        <li className="text-2xl text-gray-900"><a href="/cartShop">Home</a></li>
-                        <li className="text-2xl "><a href="/cartShop/store">Store</a></li>
-                        <li className="text-2xl "><a href="/cartShop/about">About</a></li>
+                        <li className="text-2xl "><a href="/cartShop">Store</a></li>
                     </ul>
                 </nav>
                 <button onClick={openCart} className="relative py-2 px-4 bg-transparent border-2 border-blue-500 rounded
