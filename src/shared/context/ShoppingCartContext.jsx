@@ -11,7 +11,7 @@ export const useShoppingCart = () => {
 
 export const ShoppingProvider = ({ children }) => {
 
-    const [isOpen, setIsOpen] = useState<Boolean>(false)
+    const [isOpen, setIsOpen] = useState(false)
     const [cartItems, setCartItems] = useLocalStorage("shopping-cart", [])
 
     const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)

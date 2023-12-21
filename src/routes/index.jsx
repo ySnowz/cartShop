@@ -12,9 +12,9 @@ export const AppRoutes = () => {
             <ShoppingProvider>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/store" element={<Store />} />
-                    <Route path="/about" element={<AboutUs />} />
+                    <Route path="/cartShop" element={<Home />} />
+                    <Route path="/cartShop/store" element={<Store />} />
+                    <Route path="/carttShop/about" element={<AboutUs />} />
                     <Route path='*' element={<NotFound />} />
                 </Routes>
             </ShoppingProvider>
